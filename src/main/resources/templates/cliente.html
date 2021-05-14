@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>cliente</title>
+</head>
+<body>
+		<h1>MARI4NO</h1>
+		<br>
+		<h1>FORMULARIO DE CARGA DE CLIENTE</h1>
+	<form id="formProducto" th:object="${modCliente}" th:action="@{/cliente/guardar}" method="post">
+			<label for="tipodoc">Tipo</label> 
+			<input type="text" id="tipodoc" th:field="*{tipoDeDocumento}">
+		<br>
+		<br>
+			<label for="numdoc">Documento</label> 
+			<input type="number"	id="numdoc" th:field="*{nroDocumento}">
+		<br>
+		<br>
+			<label for="nombreapellido">Nombre y Apellido</label> 
+			<input type="text" id="nombreapellido" th:field="*{nombreApellido}">
+		<br>
+		<br>
+			<label for="email">Email</label> 
+			<input type="email" id="email" th:field="*{email}">
+		<br>
+		<br>
+			<label for="fechanac">Nacimiento</label>			
+			<input type="date"	id="fechanac" th:field="*{fechaNacimiento}">
+		<br>
+		<br>
+			<label for="fucompra">Fecha ultima compra</label> 
+			<input type="date" id="fucompra" th:field="*{fechaUltimaCompra}">
+		<br>
+		<br>
+			<label for="codigo">Cod Area</label> 
+			<input type="number" id="codigo" th:field="*{codigoAreaTelefono}">		
+		<br>
+		<br>
+			<label for="numtel">Telefono</label> 
+			<input type="number" id="numtel" th:field="*{nroTelefono}">		
+		<br>
+		<br>
+			<label for="contra">Contraseña</label>
+			<input type ="password" id="contra" name="contraseña">
+		<br>
+		<br>
+		<div>
+			<button type="submit" value="Agregar">Agregar</button>
+		</div>
+	</form>
+	<br>
+	<table border =1 >
+		<tr>
+			<th>TIPO DE DOCUMENTO</th>
+			<th>NUMERO DE DOCUMENTO</th>
+			<th>NOMBRE Y APELLIDO</th>
+			<th>EMAIL</th>
+			<th>FECHA DE NACIMIENTO</th>
+			<th>FECHA DE ULTIMA COMPRA</th>
+			<th>TELEFONO</th>
+			<th>EDAD</th>
+			<th>DATOS ADICIONALES</th>
+		</tr>
+		
+		<!-- cl : ${liCliente} dato : ${tipo de dato} -->
+		<tr th:each="clientex : ${liCliente}">
+			<td th:text ="${clientex.tipoDeDocumento}"></td>
+			<td th:text ="${clientex.nroDocumento}"></td>
+			<td th:text ="${clientex.nombreApellido.toUpperCase()}"></td>
+			<td th:text ="${clientex.email}"></td>
+			<td th:text ="${#temporals.format( clientex.fechaNacimiento,'dd/MM/yyyy')}"></td>
+			<td th:text ="${#temporals.format( clientex.fechaUltimaCompra,'dd/MM/yyyy')}"></td>
+			<td th:text ="|${clientex.codigoAreaTelefono} - ${clientex.nroTelefono}|"></td>
+			<td th:text ="${clientex.edad}"></td>
+			<td th:text="${clientex.getTiempoDesdeUltimaCompra()}"></td>
+		</tr>	
+	
+	</table>
+	
+	
+	
+
+</body>
+</html>
