@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>producto</title>
+</head>
+<body>
+	<h1>MARI4NO CHOROLQUE</h1>
+		<br>
+		<h1>Formulario de Carga de Producto</h1>
+	<form id="formProducto" th:object="${Producto}" th:action="@{/Producto/Guardar}" method="post">
+			<!-- ${} indica una variable (un objeto), *{} para campos , @{} indica link (peticion)  -->
+			<!-- th:field indica en que campo del objeto definido en th :objet se guarda -->
+			
+			<label for="nombre">Nombre</label> 
+			<input type="text" id="nombre" th:field="*{nombre}">
+		<br>
+			<label for="codigo">Codigo</label> 
+			<input type="number" id="codigo" th:field="*{codigo}">
+		<br>
+			<label for="stock">Stock</label> 
+			<input type="number" id="stock" th:field="*{stock}">
+		<br>
+			<label for="marca">Marca</label> 
+			<input type="text" id="marca" th:field="*{marca}">
+		<br>
+			<label for="Precio">Precio</label>			
+			<input type="number" id="Precio" th:field="*{precio}">
+		<br>
+		<div>
+			<button type="submit" value="Agregar">Agregar</button>
+		</div>
+	</form>
+</body>
+</html>

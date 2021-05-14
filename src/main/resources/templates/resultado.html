@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>resultado</title>
+</head>
+<body>
+	<h1>MARI4NO</h1>
+	<a th:href = "@{/Producto/Ultimo}">Mostrar ultimo producto </a>
+	<!-- ${} indica una variable (un objeto),   -->
+	<br>
+	<a th:href = "@{/Volver}">Volver</a>
+	
+	<table border =1 >
+		<tr>
+			<th>NOMBRE</th>
+			<th>CODIGO</th>
+			<th>STOCK</th>
+			<th>MARCA</th>
+			<th>PRECIO</th>
+		</tr>
+		<!-- th:each permite captura un elemento en una variable -->
+		<tr th:each="producto : ${productos}">
+			<td th:text ="${producto.nombre}"></td>
+			<td th:text ="${producto.codigo}"></td>
+			<td th:text ="${producto.stock}"></td>
+			<td th:text ="${producto.marca}"></td>
+			<td th:text ="${producto.precio}"></td>
+
+		</tr>	
+	
+	</table>
+</body>
+</html>

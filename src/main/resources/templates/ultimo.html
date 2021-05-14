@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border=1 >
+		<tr>
+			<th>NOMBRE</th>
+			<th>CODIGO</th>
+			<th>STOCK</th>
+			<th>MARCA</th>
+			<th>PRECIO</th>
+		</tr>
+		<!-- th:each permite captura un elemento en una variable -->
+		<tr>
+			<td th:text ="${ultimo.nombre}"></td>
+			<td th:text ="${ultimo.codigo}"></td>
+			<td th:text ="${ultimo.stock}"></td>
+			<td th:text ="${ultimo.marca}"></td>
+			<td th:text ="${ultimo.precio}"></td>
+
+		</tr>	
+</html>
