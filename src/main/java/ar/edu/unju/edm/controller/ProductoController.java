@@ -32,12 +32,15 @@ public class ProductoController {
 		public String volver() {
 			return "redirect:/Producto";
 	}
-	
+	@GetMapping("/Producto/Mostrar")
+		public String mostrar(Model modelo) {
+			modelo.addAttribute("productos", ProductoServicio.obtenerTodos());
+			return "resultado";
+	}
 	@PostMapping("/Producto/Guardar")
 		public String guardarProducto(@ModelAttribute(name ="Producto")Producto unProducto, Model modelo) {
 			ProductoServicio.guardarProducto(unProducto);
-			modelo.addAttribute("productos", ProductoServicio.obtenerTodos());
-			return "resultado";
+			return "redirect:/Producto";
 }
 
 }

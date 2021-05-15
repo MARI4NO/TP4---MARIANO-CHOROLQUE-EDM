@@ -147,18 +147,3 @@ public class Cliente {
 
 }
 
-
-/*public void generarEdad(){
-if(LocalDate.now().getMonthValue() > fechaNacimiento.getMonthValue()){
-	edad = LocalDate.now().getYear() - fechaNacimiento.getYear();
-}
-else if(LocalDate.now().getMonthValue() == fechaNacimiento.getMonthValue()){
-	if(fechaNacimiento.getDayOfMonth() >= LocalDate.now().getDayOfMonth()){
-		edad = LocalDate.now().getYear() - fechaNacimiento.getYear();
-	}
-	else{
-		edad = LocalDate.now().getYear() - fechaNacimiento.getYear() - 1;
-	}
-}
-else{
-	edad =*/

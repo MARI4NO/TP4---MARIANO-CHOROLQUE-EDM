@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/miEstilo.css}">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}">
+<title>Inicio</title>
+</head>
+<body class="fondo">
+	<div class="micontainer text-dark d-flex align-items-center justify-content-center">
+		
+		<div class="card col-md-5">
+                <div class="card-header text-center pt-5">
+                    <h3>Bienvenido! <br> Ingrese su nombre de usuario</h3>
+                </div>
+                <div class="card-body pb-5">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="nombre" class="form-label text-secondary">Nombre Usuario</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" value="Enviar" class="btn btn-primary mb-2">Iniciar Sesion</button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" value="Enviar" class="btn btn-light text-primary">Crear Cuenta</button>
+                     	</div>
+					</form>
+                </div>
+            </div>
+	
+	</div>
+	
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

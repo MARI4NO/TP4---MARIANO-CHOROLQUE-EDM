@@ -2,84 +2,115 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/miEstilo.css}">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}">
 <title>cliente</title>
 </head>
-<body>
-		<h1>MARI4NO</h1>
-		<br>
-		<h1>FORMULARIO DE CARGA DE CLIENTE</h1>
-	<form id="formProducto" th:object="${modCliente}" th:action="@{/cliente/guardar}" method="post">
-			<label for="tipodoc">Tipo</label> 
-			<input type="text" id="tipodoc" th:field="*{tipoDeDocumento}">
-		<br>
-		<br>
-			<label for="numdoc">Documento</label> 
-			<input type="number"	id="numdoc" th:field="*{nroDocumento}">
-		<br>
-		<br>
-			<label for="nombreapellido">Nombre y Apellido</label> 
-			<input type="text" id="nombreapellido" th:field="*{nombreApellido}">
-		<br>
-		<br>
-			<label for="email">Email</label> 
-			<input type="email" id="email" th:field="*{email}">
-		<br>
-		<br>
-			<label for="fechanac">Nacimiento</label>			
-			<input type="date"	id="fechanac" th:field="*{fechaNacimiento}">
-		<br>
-		<br>
-			<label for="fucompra">Fecha ultima compra</label> 
-			<input type="date" id="fucompra" th:field="*{fechaUltimaCompra}">
-		<br>
-		<br>
-			<label for="codigo">Cod Area</label> 
-			<input type="number" id="codigo" th:field="*{codigoAreaTelefono}">		
-		<br>
-		<br>
-			<label for="numtel">Telefono</label> 
-			<input type="number" id="numtel" th:field="*{nroTelefono}">		
-		<br>
-		<br>
-			<label for="contra">Contraseña</label>
-			<input type ="password" id="contra" name="contraseña">
-		<br>
-		<br>
-		<div>
-			<button type="submit" value="Agregar">Agregar</button>
-		</div>
-	</form>
-	<br>
-	<table border =1 >
-		<tr>
-			<th>TIPO DE DOCUMENTO</th>
-			<th>NUMERO DE DOCUMENTO</th>
-			<th>NOMBRE Y APELLIDO</th>
-			<th>EMAIL</th>
-			<th>FECHA DE NACIMIENTO</th>
-			<th>FECHA DE ULTIMA COMPRA</th>
-			<th>TELEFONO</th>
-			<th>EDAD</th>
-			<th>DATOS ADICIONALES</th>
-		</tr>
+<body class="fondo text-light " >
+	<div class="container ">
 		
-		<!-- cl : ${liCliente} dato : ${tipo de dato} -->
-		<tr th:each="clientex : ${liCliente}">
-			<td th:text ="${clientex.tipoDeDocumento}"></td>
-			<td th:text ="${clientex.nroDocumento}"></td>
-			<td th:text ="${clientex.nombreApellido.toUpperCase()}"></td>
-			<td th:text ="${clientex.email}"></td>
-			<td th:text ="${#temporals.format( clientex.fechaNacimiento,'dd/MM/yyyy')}"></td>
-			<td th:text ="${#temporals.format( clientex.fechaUltimaCompra,'dd/MM/yyyy')}"></td>
-			<td th:text ="|${clientex.codigoAreaTelefono} - ${clientex.nroTelefono}|"></td>
-			<td th:text ="${clientex.edad}"></td>
-			<td th:text="${clientex.getTiempoDesdeUltimaCompra()}"></td>
-		</tr>	
+		<div class = "micontainer" >
+			<div th:insert = "Layout/header::header">
+			
+			</div>
+			<h1 class ="text-center m-2" >FORMULARIO DE CARGA DE CLIENTE</h1>
+			<form id="formProducto" th:object="${modCliente}" th:action="@{/cliente/guardar}" method="post">
+				
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="tipodoc">Tipo</label> 
+					<input class="col-7 form-control" type="text" id="tipodoc" th:field="*{tipoDeDocumento}"> 
+				</div>
+				
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="numdoc">Documento</label> 
+					<input class="col-7 form-control" type="number" id="numdoc" th:field="*{nroDocumento}"> 
+				</div>
+				
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="nombreapellido">Nombre y Apellido</label> 
+					<input class="col-7 form-control" type="text" id="nombreapellido" th:field="*{nombreApellido}"> 
+				</div>
+			 
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="email">Email</label> 
+					<input class="col-7 form-control" type="email" id="email" th:field="*{email}"> 
+				</div>
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="fechanac">Nacimiento</label> 
+					<input class="col-7 form-control" type="date" id="fechanac" th:field="*{fechaNacimiento}" required> 
+				</div>
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="fucompra">Fecha ultima compra</label> 
+					<input class="col-7 form-control " type="date" id="fucompra" th:field="*{fechaUltimaCompra}" required> 
+				</div>
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="codigo">Cod Area</label> 
+					<input class="col-7 form-control" type="number" id="codigo" th:field="*{codigoAreaTelefono}"> 
+				</div>
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="numtel">Telefono</label> 
+					<input class="col-7 form-control" type="number" id="numtel" th:field="*{nroTelefono}">
+				</div>
+				<div class="form-group row d-flex justify-content-center">
+					<label class="col-sm-3 col-md-2 form-label text-center" for="contra">Contraseña</label> 
+					<input class="col-7 form-control" type="password" id="contra" name="contraseña">
+				</div>
+				
+				<div class="form-group row d-flex justify-content-center " >
+					<button class="btn btn-success " type="submit" value="Agregar">Agregar</button>
+				</div>
+				
+
+			</form>
+			
+			<br>
+			<div class="table-responsive text-center d-md-flex justify-content-center">
+			<table class="table-dark table-bordered">
+				<tr>
+					<th>TIPO DE DOCUMENTO</th>
+					<th>NUMERO DE DOCUMENTO</th>
+					<th>NOMBRE Y APELLIDO</th>
+					<th>EMAIL</th>
+					<th>FECHA DE NACIMIENTO</th>
+					<th>FECHA DE ULTIMA COMPRA</th>
+					<th>TELEFONO</th>
+					<th>EDAD</th>
+					<th>DATOS ADICIONALES</th>
+				</tr>
+					
+				<tr th:if="${liCliente.isEmpty()}">
+					<td colspan="9">No hay clientes cargados</td>
+				</tr>	
+				<!-- cl : ${liCliente} dato : ${tipo de dato} -->
+				<tr th:each="clientex : ${liCliente}">
+					
+					<td th:text="${clientex.tipoDeDocumento}"></td>
+					<td th:text="${clientex.nroDocumento}"></td>
+					<td th:text="${clientex.nombreApellido.toUpperCase()}"></td>
+					<td th:text="${clientex.email}"></td>
+					<td
+						th:text="${#temporals.format( clientex.fechaNacimiento,'dd/MM/yyyy')}"></td>
+					<td
+						th:text="${#temporals.format( clientex.fechaUltimaCompra,'dd/MM/yyyy')}"></td>
+					<td
+						th:text="|${clientex.codigoAreaTelefono} - ${clientex.nroTelefono}|"></td>
+					<td th:text="${clientex.edad}"></td>
+					<td th:text="${clientex.getTiempoDesdeUltimaCompra()}"></td>
+				</tr>
+
+			</table>
+			</div>
+		</div>
+		<div th:insert = "Layout/footer::footer">
+			
+		</div>
+	</div>
 	
-	</table>
-	
-	
-	
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

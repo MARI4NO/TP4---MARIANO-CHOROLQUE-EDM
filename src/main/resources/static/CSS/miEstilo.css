@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+
+.fondo{
+	height: 100%;
+    background-image: url("../img/FONDO.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.minav{
+    background-color: #4682B4 ;
+}
+.mifooter{
+    text-align: center;
+    padding: 16px 16px 16px 16px;
+    margin-top: 24px;
+}
+
+html{
+    height: 100%;
+}
+.container{
+    height: 100%;
+}
+
+.micontainer{
+    min-height: 100%;
+}
