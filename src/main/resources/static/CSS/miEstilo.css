@@ -3,8 +3,8 @@
 
 .fondo{
 	height: 100%;
-    background-image: url("../img/FONDO.jpg");
-    background-size: cover;
+    background-image: url("../img/FONDO1.jpg");
+    background-size: auto;
     background-position: center;
     background-attachment: fixed;
 }
@@ -27,4 +27,9 @@ html{
 
 .micontainer{
     min-height: 100%;
+}
+
+.card{
+	border-radius:20px;
+	
 }
