@@ -12,6 +12,8 @@ public interface IClienteServicio {
 	public void guardarCliente(Cliente unCliente );
 	public List<Cliente> obtenerClientes();
 	public Cliente crearCliente(); 
-		
+	public void modificarCliente (Cliente unCliente);
+	public void eliminarCliente (Cliente unCliente);
+	public Cliente buscarCliente (int dni);
 	
 }
