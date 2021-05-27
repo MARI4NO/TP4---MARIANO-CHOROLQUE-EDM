@@ -1,4 +1,4 @@
-package ar.edu.unju.edm.Servicie;
+package ar.edu.unju.edm.Servicie.Interface;
 
 import java.util.List;
 

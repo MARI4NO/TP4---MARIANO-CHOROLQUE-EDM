@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ar.edu.unju.edm.Servicie.IProductoServicio;
+import ar.edu.unju.edm.Servicie.Interface.IProductoServicio;
 import ar.edu.unju.edm.model.Producto;
 
 @Controller

@@ -1,10 +1,11 @@
-package ar.edu.unju.edm.Servicie;
+package ar.edu.unju.edm.Servicie.Imp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.unju.edm.Servicie.Interface.IProductoServicio;
 import ar.edu.unju.edm.model.Producto;
 import ar.edu.unju.edm.util.ListaProductos;
 

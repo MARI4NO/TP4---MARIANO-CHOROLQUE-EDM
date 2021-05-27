@@ -3,15 +3,33 @@ package ar.edu.unju.edm.model;
 import java.time.LocalDate;
 import java.time.Period;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+
+
+@Entity
+@Table(name = "clientes")
 @Component
 public class Cliente {
-
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
+	@GenericGenerator(name="native", strategy="native")
+	@Column
+	private int idCliente;
+	@Column
 	private String tipoDeDocumento,nombreApellido,email,password;
+	@Column
 	private int nroDocumento,edad,codigoAreaTelefono,nroTelefono;
+	@Column
 	@DateTimeFormat(pattern ="yyyy-MM-dd")
 	private LocalDate fechaNacimiento,fechaUltimaCompra;
 	

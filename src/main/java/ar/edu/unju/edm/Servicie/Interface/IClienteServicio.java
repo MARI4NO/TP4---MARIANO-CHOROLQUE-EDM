@@ -1,4 +1,4 @@
-package ar.edu.unju.edm.Servicie;
+package ar.edu.unju.edm.Servicie.Interface;
 
 import java.util.List;
 
@@ -12,8 +12,9 @@ public interface IClienteServicio {
 	public void guardarCliente(Cliente unCliente );
 	public List<Cliente> obtenerClientes();
 	public Cliente crearCliente(); 
-	public void modificarCliente (Cliente unCliente);
-	public void eliminarCliente (Cliente unCliente);
-	public Cliente buscarCliente (int dni);
+	public void modificarCliente (Cliente unCliente) throws Exception;
+	public void eliminarCliente (Cliente unCliente) throws Exception;
+	public Cliente buscarCliente (Cliente unCliente) throws Exception;
+	public Cliente buscarClientePorDni(int dni) throws Exception;
 	
 }
