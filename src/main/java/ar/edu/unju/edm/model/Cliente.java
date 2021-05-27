@@ -129,6 +129,14 @@ public class Cliente {
 		return fechaUltimaCompra;
 	}
 
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	public void setFechaUltimaCompra(LocalDate fechaUltimaCompra) {
 		this.fechaUltimaCompra = fechaUltimaCompra;
 	}
