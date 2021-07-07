@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/miEstilo.css}">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}">
+<title>ultimo</title>
 </head>
-<body>
-	<table border=1 >
-		<tr>
-			<th>NOMBRE</th>
-			<th>CODIGO</th>
-			<th>STOCK</th>
-			<th>MARCA</th>
-			<th>PRECIO</th>
-		</tr>
-		<!-- th:each permite captura un elemento en una variable -->
-		<tr>
-			<td th:text ="${ultimo.nombre}"></td>
-			<td th:text ="${ultimo.codigo}"></td>
-			<td th:text ="${ultimo.stock}"></td>
-			<td th:text ="${ultimo.marca}"></td>
-			<td th:text ="${ultimo.precio}"></td>
+<body class="fondo">
+		<div th:insert = "Layout/header::header">	
+		</div>
+		
+		<div class="micontainer text-dark d-flex align-items-center justify-content-center">
+		<div class="row d-flex justify-content-center">
+			<!-- th:each permite captura un elemento en una variable -->
+				<div class="card mb-3" style="width: 100%;">
+					<div class="card-header">
+						<img th:src="@{/img/produc.png}" alt="" class="container-fluid">
+					</div>
+					
+					<div class="card-body">
 
-		</tr>	
+						<p>Nombre: <span th:text="${ultimo.nombre}"></span></p>
+						<p>Marca: <span th:text="${ultimo.marca}"></span></p>
+						<p>Precio: <span th:text="${ultimo.precio}"></span></p>
+						<p>Stock: <span th:text="${ultimo.stock}"></span></p>
+						<p>Codigo: <span th:text="${ultimo.codigo}"></span></p>
+						<div class="text-center">
+							<a href="#" class="btn btn-success text-light">
+							<i class="fas fa-shopping-cart"></i> Comprar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
+	</body>
+	
 </html>
