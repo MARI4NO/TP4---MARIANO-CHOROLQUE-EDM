@@ -26,9 +26,8 @@
 						<p>Precio: <span th:text="${ultimo.precio}"></span></p>
 						<p>Stock: <span th:text="${ultimo.stock}"></span></p>
 						<p>Codigo: <span th:text="${ultimo.codigo}"></span></p>
-						<div class="text-center">
-							<a href="#" class="btn btn-success text-light">
-							<i class="fas fa-shopping-cart"></i> Comprar</a>
+						<div th:insert = "Layout/modal::modal">
+			
 						</div>
 					</div>
 				</div>
