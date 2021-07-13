@@ -1,12 +1,30 @@
 package ar.edu.unju.edm.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 
 @Component	
+@Entity
+@Table(name = "producto")
 public class Producto {
 	
-	public int codigo, stock;
+	@Id
+	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
+	@GenericGenerator(name="native", strategy="native")
+	public int codigo;
+	@Column
+	public int stock;
+	@Column
 	public String nombre, marca;
+	@Column
 	public double precio;
 
 	public Producto() {
