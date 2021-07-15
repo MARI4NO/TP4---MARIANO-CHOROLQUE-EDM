@@ -37,6 +37,7 @@ public class ProductoController {
 	@GetMapping("/Producto/Mostrar")
 		public String mostrar(Model modelo) {
 			modelo.addAttribute("productos", ProductoServicio.obtenerTodos());
+			modelo.addAttribute("error",false);
 			return "resultado";
 	}
 	@PostMapping("/Producto/Guardar")

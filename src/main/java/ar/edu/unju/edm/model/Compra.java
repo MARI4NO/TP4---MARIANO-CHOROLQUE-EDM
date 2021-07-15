@@ -23,16 +23,15 @@ public class Compra {
 	
 
 		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
-		@GenericGenerator(name="native", strategy="native")
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column
 		private Integer idCompra;
 			
-		@ManyToOne(cascade = CascadeType.ALL)
+		@ManyToOne
 		@JoinColumn(name = "idCliente")
 		private Cliente ciente;
 			
-		@ManyToOne(cascade = CascadeType.ALL)
+		@ManyToOne
 		@JoinColumn(name = "codigo")
 		private Producto producto;
 		

@@ -16,5 +16,5 @@ public interface IClienteServicio {
 	public void eliminarCliente (Cliente unCliente) throws Exception;
 	public Cliente buscarCliente (Cliente unCliente) throws Exception;
 	public Cliente buscarClientePorDni(int dni) throws Exception;
-	
+	public Cliente buscarCliente2 (Integer id);
 }

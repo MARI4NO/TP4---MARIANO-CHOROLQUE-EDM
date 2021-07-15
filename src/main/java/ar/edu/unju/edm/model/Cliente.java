@@ -21,8 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cliente {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
-	@GenericGenerator(name="native", strategy="native")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column
 	private int idCliente;
 	@Column

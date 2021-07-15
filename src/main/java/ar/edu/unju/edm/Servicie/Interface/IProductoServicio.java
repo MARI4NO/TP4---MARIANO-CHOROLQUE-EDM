@@ -14,6 +14,7 @@ public interface IProductoServicio {
 	public void modificarProducto (int codigo);
 	public Producto nuevoProducto ();
 	public List<Producto> obtenerTodos ();
+	public Producto buscarProducto(Integer codigo);
 }
 
 

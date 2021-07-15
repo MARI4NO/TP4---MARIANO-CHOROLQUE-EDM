@@ -17,8 +17,7 @@ public class Producto {
 	
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
-	@GenericGenerator(name="native", strategy="native")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int codigo;
 	@Column
 	public int stock;

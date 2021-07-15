@@ -80,4 +80,11 @@ public class ClienteServiceMySQL implements IClienteServicio{
 		// TODO Auto-generated method stub
 	 return ClienteDAO.findByNroDocumento(dni).orElseThrow(()->new Exception("Cliente no encontrado"));
 	}
+
+	@Override
+	public Cliente buscarCliente2(Integer id) {
+		// TODO Auto-generated method stub
+		Cliente encotrado=ClienteDAO.findById(id).orElse(null);
+		return encotrado;
+	}
 }

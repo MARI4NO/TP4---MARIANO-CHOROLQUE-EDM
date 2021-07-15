@@ -53,4 +53,10 @@ public class ProductoServicieImp implements IProductoServicio {
 		return listaProductos;
 	}
 
+	@Override
+	public Producto buscarProducto(Integer codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
